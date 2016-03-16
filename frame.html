@@ -1,0 +1,14 @@
+<form id='sendForm' action="https://logistics.allpay.com.tw/Express/map" method="post">
+  <br>Post Url: https://logistics.allpay.com.tw/Express/map
+  <br>MerchantID: <input name="MerchantID" value="1055137" />
+  <br>MerchantTradeNo: <input name="MerchantTradeNo" value="Allpay_1234" />
+  <br>LogisticsType: <input name="LogisticsType" value="CVS" />
+  <br>LogisticsSubType: <input name="LogisticsSubType" value="FAMI" />
+  <br>IsCollection: <input name="IsCollection" value="N" />
+  <br>ServerReplyURL: <input name="ServerReplyURL" value="http://tnstiger.github.io/allpayCvsTest/" />
+  <br>Device: <input name="Device" value="1" />
+  <br><br><button type='submit'>submit</button>
+</form>
+<script>
+  window.document.getElementById('sendForm').submit();
+</script>

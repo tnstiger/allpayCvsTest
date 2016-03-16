@@ -29,17 +29,26 @@
           <span aria-hidden="true" class="octicon octicon-link"></span>
         </a>Http Post Request</h3>
 
-      <form action="https://logistics.allpay.com.tw/Express/map" method="post">
-        <br>Post Url: https://logistics.allpay.com.tw/Express/map
-        <br>MerchantID: <input name="MerchantID" value="1055137" />
+      <form id='form' action="http://logistics-stage.allpay.com.tw/Express/map" method="post">
+        <br>Post Url:<select name='url' id='url'>
+          <option value='http://logistics-stage.allpay.com.tw/Express/map'>
+            測試 http://logistics-stage.allpay.com.tw/Express/map
+          </option>
+          <option value='https://logistics.allpay.com.tw/Express/map'>
+            正式 https://logistics.allpay.com.tw/Express/map
+          </option>
+        </select>
+        <br>MerchantID: <input name="MerchantID" value="1155128" />
         <br>MerchantTradeNo: <input name="MerchantTradeNo" value="Allpay_1234" />
         <br>LogisticsType: <input name="LogisticsType" value="CVS" />
         <br>LogisticsSubType: <input name="LogisticsSubType" value="FAMI" />
         <br>IsCollection: <input name="IsCollection" value="N" />
         <br>ServerReplyURL: <input name="ServerReplyURL" value="http://tnstiger.github.io/allpayCvsTest/" />
-        <br>Device: <input name="Device" value="Mobile" />
+        <br>Device: <input name="Device" value="1" />
         <br><br><button type='submit'>submit</button>
       </form>
+      <!-- <img src="https://logistics.allpay.com.tw/Express/map" /> -->
+      <!-- <iframe src='frame.html'></iframe> -->
       </section>
     <footer>
       <p>This project is maintained by <a href="https://github.com/tnstiger">tnstiger</a></p>
@@ -48,7 +57,16 @@
       </p>
     </footer>
   </div>
+  <script src="https://code.jquery.com/jquery-1.12.1.js"   integrity="sha256-VuhDpmsr9xiKwvTIHfYWCIQ84US9WqZsLfR4P7qF6O8="   crossorigin="anonymous"></script>
   <script src="javascripts/scale.fix.js"></script>
+  <script>
+    $(function(){
+      $('#url').change(function(obj){
+        var url = $( "#url option:selected" ).val();
+        $('#form').attr('action', url);
+      });
+    })
+  </script>
 
 </body>
 
